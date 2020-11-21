@@ -1,5 +1,4 @@
-# nano-sensor-node
-Arduino Nano wirelees network sensor node 
+# Nano-sensor-node
 
 ### Pin Configuration
 
