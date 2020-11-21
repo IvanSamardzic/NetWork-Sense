@@ -1,0 +1,482 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Module:Arduino_Nano_v3.x U1
+U 1 1 5F8491A3
+P 5485 4620
+F 0 "U1" H 5125 3655 50  0000 C CNN
+F 1 "Arduino_Nano_v3.x" H 5985 3665 50  0000 C CNN
+F 2 "Module:Arduino_Nano" H 5485 4620 50  0001 C CIN
+F 3 "http://www.mouser.com/pdfdocs/Gravitech_Arduino_Nano3_0.pdf" H 5485 4620 50  0001 C CNN
+	1    5485 4620
+	1    0    0    -1  
+$EndComp
+$Comp
+L RF:NRF24L01_Breakout U2
+U 1 1 5F84D6BB
+P 7825 2490
+F 0 "U2" H 8205 2536 50  0000 L CNN
+F 1 "NRF24L01_Breakout" H 8205 2445 50  0000 L CNN
+F 2 "RF_Module:nRF24L01_Breakout" H 7975 3090 50  0001 L CIN
+F 3 "http://www.nordicsemi.com/eng/content/download/2730/34105/file/nRF24L01_Product_Specification_v2_0.pdf" H 7825 2390 50  0001 C CNN
+	1    7825 2490
+	1    0    0    -1  
+$EndComp
+Text Notes 7430 7500 0    50   ~ 10
+dock.me Demo Board
+Text Notes 8170 7635 0    50   ~ 0
+12.10.2020.
+Text Notes 7015 6880 0    50   ~ 10
+Hardware Sensor Network Node
+Text GLabel 7825 1890 1    50   Input ~ 10
+3.3V
+Text GLabel 5585 3620 1    50   Input ~ 10
+3.3V
+$Comp
+L power:GND #PWR0101
+U 1 1 5F8504A5
+P 5485 5660
+F 0 "#PWR0101" H 5485 5410 50  0001 C CNN
+F 1 "GND" H 5490 5487 50  0000 C CNN
+F 2 "" H 5485 5660 50  0001 C CNN
+F 3 "" H 5485 5660 50  0001 C CNN
+	1    5485 5660
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5485 5620 5485 5640
+Wire Wire Line
+	5585 5620 5585 5640
+Wire Wire Line
+	5585 5640 5485 5640
+Connection ~ 5485 5640
+Wire Wire Line
+	5485 5640 5485 5660
+$Comp
+L power:GND #PWR0102
+U 1 1 5F8512D4
+P 7825 3090
+F 0 "#PWR0102" H 7825 2840 50  0001 C CNN
+F 1 "GND" H 7830 2917 50  0000 C CNN
+F 2 "" H 7825 3090 50  0001 C CNN
+F 3 "" H 7825 3090 50  0001 C CNN
+	1    7825 3090
+	1    0    0    -1  
+$EndComp
+Text GLabel 7365 4345 0    50   Input ~ 10
+TRIG
+Text GLabel 7365 4445 0    50   Input ~ 10
+ECHO
+$Comp
+L power:GND #PWR0103
+U 1 1 5F85209F
+P 7365 4545
+F 0 "#PWR0103" H 7365 4295 50  0001 C CNN
+F 1 "GND" H 7370 4372 50  0000 C CNN
+F 2 "" H 7365 4545 50  0001 C CNN
+F 3 "" H 7365 4545 50  0001 C CNN
+	1    7365 4545
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F85357C
+P 8370 4420
+F 0 "R1" H 8510 4430 50  0000 C CNN
+F 1 "330R" H 8520 4350 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0414_L11.9mm_D4.5mm_P15.24mm_Horizontal" V 8300 4420 50  0001 C CNN
+F 3 "~" H 8370 4420 50  0001 C CNN
+	1    8370 4420
+	1    0    0    -1  
+$EndComp
+Text GLabel 7365 4245 0    50   Input ~ 10
+5V
+$Comp
+L Connector:Conn_01x04_Female J3
+U 1 1 5F84EAB2
+P 7565 4345
+F 0 "J3" H 7593 4321 50  0000 L CNN
+F 1 "SR-04 Connector" H 7593 4230 50  0000 L CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 7565 4345 50  0001 C CNN
+F 3 "~" H 7565 4345 50  0001 C CNN
+	1    7565 4345
+	1    0    0    -1  
+$EndComp
+Text GLabel 5685 3620 1    50   Input ~ 10
+5V
+Text GLabel 7325 2490 0    50   Input ~ 10
+!CSN
+Text GLabel 4985 4820 0    50   Input ~ 10
+!CSN
+Text GLabel 7325 2690 0    50   Input ~ 10
+CE
+Text GLabel 4985 4720 0    50   Input ~ 10
+CE
+Text GLabel 7325 2390 0    50   Input ~ 10
+SCK
+Text GLabel 4985 5320 0    50   Input ~ 10
+SCK
+Text GLabel 7325 2190 0    50   Input ~ 10
+MOSI
+Text GLabel 4985 5120 0    50   Input ~ 10
+MOSI
+Text GLabel 7325 2290 0    50   Input ~ 10
+MISO
+Text GLabel 4985 5220 0    50   Input ~ 10
+MISO
+$Comp
+L Regulator_Linear:AMS1117-5.0 U3
+U 1 1 5F858493
+P 3630 2270
+F 0 "U3" H 3630 2512 50  0000 C CNN
+F 1 "AMS1117-5.0" H 3630 2421 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 3630 2470 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 3730 2020 50  0001 C CNN
+	1    3630 2270
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C2
+U 1 1 5F85B96A
+P 4190 2420
+F 0 "C2" H 4305 2466 50  0000 L CNN
+F 1 "100uF" H 4305 2375 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm" H 4190 2420 50  0001 C CNN
+F 3 "~" H 4190 2420 50  0001 C CNN
+	1    4190 2420
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C1
+U 1 1 5F85C7DC
+P 3040 2430
+F 0 "C1" H 3155 2476 50  0000 L CNN
+F 1 "100uF" H 3155 2385 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm" H 3040 2430 50  0001 C CNN
+F 3 "~" H 3040 2430 50  0001 C CNN
+	1    3040 2430
+	1    0    0    -1  
+$EndComp
+$Comp
+L Diode:1N4148 D1
+U 1 1 5F85CD77
+P 2675 2270
+F 0 "D1" H 2675 2053 50  0000 C CNN
+F 1 "1N4148" H 2675 2144 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 2675 2095 50  0001 C CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/1N4148_1N4448.pdf" H 2675 2270 50  0001 C CNN
+	1    2675 2270
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2825 2270 3040 2270
+Wire Wire Line
+	3040 2270 3040 2280
+Connection ~ 3040 2270
+Wire Wire Line
+	3930 2270 4190 2270
+Wire Wire Line
+	3040 2270 3330 2270
+$Comp
+L Connector:Conn_01x02_Male J1
+U 1 1 5F869692
+P 2505 3605
+F 0 "J1" H 2613 3786 50  0000 C CNN
+F 1 "Battery Connector" H 2613 3695 50  0000 C CNN
+F 2 "ATTiny84-BMS-module:1x02_5.08mm" H 2505 3605 50  0001 C CNN
+F 3 "~" H 2505 3605 50  0001 C CNN
+	1    2505 3605
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5F86B86A
+P 3445 3715
+F 0 "#PWR0104" H 3445 3465 50  0001 C CNN
+F 1 "GND" H 3450 3542 50  0000 C CNN
+F 2 "" H 3445 3715 50  0001 C CNN
+F 3 "" H 3445 3715 50  0001 C CNN
+	1    3445 3715
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0105
+U 1 1 5F86BC2C
+P 3630 2645
+F 0 "#PWR0105" H 3630 2395 50  0001 C CNN
+F 1 "GND" H 3635 2472 50  0000 C CNN
+F 2 "" H 3630 2645 50  0001 C CNN
+F 3 "" H 3630 2645 50  0001 C CNN
+	1    3630 2645
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3630 2570 3630 2610
+Wire Wire Line
+	3040 2580 3040 2610
+Wire Wire Line
+	3040 2610 3630 2610
+Connection ~ 3630 2610
+Wire Wire Line
+	3630 2610 3630 2645
+Wire Wire Line
+	3630 2610 4190 2610
+Wire Wire Line
+	4190 2610 4190 2570
+Wire Wire Line
+	4260 2270 4190 2270
+Connection ~ 4190 2270
+Text GLabel 4260 2270 2    50   Input ~ 10
+5V
+Text GLabel 2705 3605 2    50   Input ~ 10
+VIN
+Text GLabel 2525 2270 0    50   Input ~ 10
+VIN
+Text GLabel 4985 4920 0    50   Input ~ 10
+TRIG
+Text GLabel 4985 5020 0    50   Input ~ 10
+ECHO
+Text GLabel 4985 4220 0    50   Input ~ 10
+RED
+Text GLabel 4985 4320 0    50   Input ~ 10
+GREEN
+$Comp
+L Device:LED D2
+U 1 1 5F88B817
+P 8215 4020
+F 0 "D2" H 8208 3765 50  0000 C CNN
+F 1 "LED" H 8208 3856 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 8215 4020 50  0001 C CNN
+F 3 "~" H 8215 4020 50  0001 C CNN
+	1    8215 4020
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 5F88E8DE
+P 8220 4195
+F 0 "D3" H 8225 4120 50  0000 C CNN
+F 1 "LED" H 8220 4290 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 8220 4195 50  0001 C CNN
+F 3 "~" H 8220 4195 50  0001 C CNN
+	1    8220 4195
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0106
+U 1 1 5F890899
+P 8370 4695
+F 0 "#PWR0106" H 8370 4445 50  0001 C CNN
+F 1 "GND" H 8375 4522 50  0000 C CNN
+F 2 "" H 8370 4695 50  0001 C CNN
+F 3 "" H 8370 4695 50  0001 C CNN
+	1    8370 4695
+	1    0    0    -1  
+$EndComp
+Text GLabel 8065 4020 0    50   Input ~ 10
+RED
+Text GLabel 8070 4195 0    50   Input ~ 10
+GREEN
+NoConn ~ 5985 4020
+NoConn ~ 5985 4120
+NoConn ~ 5985 4420
+NoConn ~ 5985 4620
+NoConn ~ 5985 4720
+NoConn ~ 5985 4820
+NoConn ~ 5985 4920
+NoConn ~ 5985 5020
+NoConn ~ 5985 5120
+NoConn ~ 5985 5220
+NoConn ~ 5985 5320
+NoConn ~ 4985 4420
+NoConn ~ 4985 4520
+NoConn ~ 4985 4620
+NoConn ~ 4985 4020
+NoConn ~ 4985 4120
+NoConn ~ 5385 3620
+NoConn ~ 7325 2790
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5F8BC6EA
+P 7460 5485
+F 0 "H1" H 7560 5531 50  0000 L CNN
+F 1 "MountingHole" H 7560 5440 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm" H 7460 5485 50  0001 C CNN
+F 3 "~" H 7460 5485 50  0001 C CNN
+	1    7460 5485
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5F8BDCB6
+P 7460 5720
+F 0 "H2" H 7560 5766 50  0000 L CNN
+F 1 "MountingHole" H 7560 5675 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm" H 7460 5720 50  0001 C CNN
+F 3 "~" H 7460 5720 50  0001 C CNN
+	1    7460 5720
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5F8BE40C
+P 8210 5495
+F 0 "H3" H 8310 5541 50  0000 L CNN
+F 1 "MountingHole" H 8310 5450 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm" H 8210 5495 50  0001 C CNN
+F 3 "~" H 8210 5495 50  0001 C CNN
+	1    8210 5495
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5F8BE412
+P 8210 5735
+F 0 "H4" H 8310 5781 50  0000 L CNN
+F 1 "MountingHole" H 8310 5690 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.5mm" H 8210 5735 50  0001 C CNN
+F 3 "~" H 8210 5735 50  0001 C CNN
+	1    8210 5735
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:CP1 C3
+U 1 1 5F8574D2
+P 8315 1955
+F 0 "C3" H 8430 2001 50  0000 L CNN
+F 1 "100uF" H 8430 1910 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm" H 8315 1955 50  0001 C CNN
+F 3 "~" H 8315 1955 50  0001 C CNN
+	1    8315 1955
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0107
+U 1 1 5F85943F
+P 8315 2105
+F 0 "#PWR0107" H 8315 1855 50  0001 C CNN
+F 1 "GND" H 8320 1932 50  0000 C CNN
+F 2 "" H 8315 2105 50  0001 C CNN
+F 3 "" H 8315 2105 50  0001 C CNN
+	1    8315 2105
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR0108
+U 1 1 5F8598CF
+P 3785 3645
+F 0 "#PWR0108" H 3785 3495 50  0001 C CNN
+F 1 "+3.3V" H 3800 3818 50  0000 C CNN
+F 2 "" H 3785 3645 50  0001 C CNN
+F 3 "" H 3785 3645 50  0001 C CNN
+	1    3785 3645
+	1    0    0    -1  
+$EndComp
+Text GLabel 3835 3650 2    50   Input ~ 10
+3.3V
+Wire Wire Line
+	3835 3650 3785 3650
+Wire Wire Line
+	3785 3650 3785 3645
+$Comp
+L power:+3.3V #PWR0109
+U 1 1 5F85F3D0
+P 8315 1805
+F 0 "#PWR0109" H 8315 1655 50  0001 C CNN
+F 1 "+3.3V" H 8330 1978 50  0000 C CNN
+F 2 "" H 8315 1805 50  0001 C CNN
+F 3 "" H 8315 1805 50  0001 C CNN
+	1    8315 1805
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x02_Male J2
+U 1 1 5F906CB4
+P 3245 3615
+F 0 "J2" H 3353 3796 50  0000 C CNN
+F 1 "5V In Connector" H 3360 3710 50  0000 C CNN
+F 2 "ATTiny84-BMS-module:1x02_5.08mm" H 3245 3615 50  0001 C CNN
+F 3 "~" H 3245 3615 50  0001 C CNN
+	1    3245 3615
+	1    0    0    -1  
+$EndComp
+Text GLabel 3445 3615 2    50   Input ~ 10
+5V
+$Comp
+L power:GND #PWR?
+U 1 1 5F90C832
+P 2705 3705
+F 0 "#PWR?" H 2705 3455 50  0001 C CNN
+F 1 "GND" H 2710 3532 50  0000 C CNN
+F 2 "" H 2705 3705 50  0001 C CNN
+F 3 "" H 2705 3705 50  0001 C CNN
+	1    2705 3705
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8370 4570 8370 4695
+Wire Wire Line
+	8370 4195 8370 4270
+Wire Wire Line
+	8370 4195 8370 4020
+Wire Wire Line
+	8370 4020 8365 4020
+Connection ~ 8370 4195
+Wire Notes Line
+	4820 1925 4820 2915
+Wire Notes Line
+	4820 2915 2150 2915
+Wire Notes Line
+	2150 2915 2150 1925
+Wire Notes Line
+	2150 1925 4820 1925
+Wire Notes Line
+	6875 1490 9135 1490
+Wire Notes Line
+	9135 1490 9135 3375
+Wire Notes Line
+	9135 3375 6865 3375
+Wire Notes Line
+	6865 3375 6865 1500
+Wire Notes Line
+	6865 1500 6870 1500
+Wire Notes Line
+	6910 3640 8910 3640
+Wire Notes Line
+	8910 3640 8910 5020
+Wire Notes Line
+	8910 5020 6910 5020
+Wire Notes Line
+	6910 5020 6910 3640
+Wire Notes Line
+	4620 3325 6565 3325
+Wire Notes Line
+	6565 3325 6565 5935
+Wire Notes Line
+	6565 5935 4545 5935
+Wire Notes Line
+	4545 5935 4545 3325
+Wire Notes Line
+	4545 3325 4615 3325
+Wire Notes Line
+	2130 3325 4290 3325
+Wire Notes Line
+	4290 3325 4290 4040
+Wire Notes Line
+	4290 4040 2125 4040
+Wire Notes Line
+	2125 4040 2125 3325
+$EndSCHEMATC
