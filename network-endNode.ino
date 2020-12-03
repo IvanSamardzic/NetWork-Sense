@@ -33,7 +33,7 @@ void reboot() {
   while (1) {}
 }
 void setup() {
-  Serial.begin(9600);
+  Serial.begin(115200);
   pinMode(redLed, OUTPUT);
   pinMode(greenLed, OUTPUT);
   pinMode(trigPin, OUTPUT);
