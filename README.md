@@ -1,4 +1,4 @@
-## Nano-sensor-node
+## NetWork-Sense
 
 * Low Power Consumption
 * Energy Autonomy
