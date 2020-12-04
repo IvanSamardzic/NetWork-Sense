@@ -128,7 +128,6 @@ void loop() {
       Serial.println(jsonIsReserved);
 
       Serial.println();
-      //Serial.println(payload.substring(payload.indexOf(":"), payload.indexOf(",")));
 
       // Free resources
       http.end();
@@ -147,10 +146,8 @@ void loop() {
       Serial.println(jsonPayload);
       int httpResponseCode = http.PUT(jsonPayload);
 
-      //String response = http.getString();
       Serial.print("PUT Response Code: ");
       Serial.println(httpResponseCode);
-      //Serial.println(response);
 
       if (httpResponseCode < 0) {
         Serial.print("Error on sending PUT Request: ");
